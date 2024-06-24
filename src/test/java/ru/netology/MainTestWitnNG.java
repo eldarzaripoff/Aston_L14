@@ -30,13 +30,10 @@ public class MainTestWitnNG {
     }
 
     @DataProvider(name = "invalidInputs")
-    public Object[][] invalidInputsProvider() {
-        return new Object[][]{
-                {0},
-                {-5},
-                {-10}
-        };
+    public Object[] invalidInputsProvider() {
+        return new Object[] {0, -5, -10};
     }
+
 
     @Test(dataProvider = "invalidInputs", expectedExceptions = IllegalArgumentException.class)
     public void testFactorialWithInvalidInput(int n) {
